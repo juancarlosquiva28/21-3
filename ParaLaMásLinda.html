@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Para mi niña 🌼</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: #493b27;
+      background: #fff9e8;
+      font-family: Montserrat, sans-serif
+    }
+
+    section {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 70px 20px;
+      overflow: hidden
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif
+    }
+
+    h1 {
+      font-size: clamp(4rem, 11vw, 8rem);
+      line-height: .78;
+      margin: 0
+    }
+
+    h2 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: .9;
+      margin: 12px 0
+    }
+
+    p {
+      line-height: 1.8
+    }
+
+    button {
+      font: 600 12px Montserrat;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 28px;
+      background: #fff;
+      cursor: pointer;
+      box-shadow: 0 10px 35px #5e4a2225;
+      transition: .3s
+    }
+
+    button:hover {
+      transform: translateY(-4px)
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 10px
+    }
+
+    .gold {
+      color: #d59f12
+    }
+
+    #hero {
+      background: linear-gradient(#fffdf4 0%, #fff5c9 65%, #efd477 100%);
+      text-align: center
+    }
+
+    .hero-content {
+      z-index: 5
+    }
+
+    .hero-sub {
+      max-width: 550px;
+      margin: 28px auto
+    }
+
+    .scroll {
+      margin-top: 45px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      opacity: .6
+    }
+
+    .sun {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: #ffe99a;
+      filter: blur(1px);
+      top: 8%;
+      right: 12%;
+      opacity: .7
+    }
+
+    .petal {
+      position: absolute;
+      top: -40px;
+      font-size: 20px;
+      animation: fall linear infinite;
+      opacity: .65
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(115vh) rotate(500deg)
+      }
+    }
+
+    #letter {
+      background: #fffdf6
+    }
+
+    .paper {
+      width: min(760px, 92vw);
+      background: #fffef9;
+      padding: 55px clamp(25px, 7vw, 75px);
+      box-shadow: 0 25px 90px #715b2a22;
+      position: relative
+    }
+
+    .paper:before {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border: 1px solid #eadca9;
+      pointer-events: none
+    }
+
+    .paper p {
+      font-family: "Cormorant Garamond";
+      font-size: 1.35rem;
+      line-height: 1.55
+    }
+
+    .sign {
+      text-align: right;
+      font-style: italic
+    }
+
+    #gallery {
+      background: #f5edcf;
+      text-align: center;
+      display: block
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: auto
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px
+    }
+
+    .polaroid {
+      background: white;
+      padding: 12px 12px 25px;
+      box-shadow: 0 15px 35px #6a57251e;
+      transition: .4s
+    }
+
+    .polaroid:nth-child(1) {
+      transform: rotate(-3deg)
+    }
+
+    .polaroid:nth-child(2) {
+      transform: rotate(2deg)
+    }
+
+    .polaroid:nth-child(3) {
+      transform: rotate(-1deg)
+    }
+
+    .polaroid:hover {
+      transform: rotate(0) translateY(-10px) scale(1.02)
+    }
+
+    .polaroid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #eee3bd
+    }
+
+    .polaroid div {
+      font-family: "Cormorant Garamond";
+      font-size: 1.25rem;
+      margin-top: 12px
+    }
+
+    #field {
+      background: #172014;
+      color: #fff;
+      text-align: center
+    }
+
+    .field-content {
+      z-index: 3;
+      max-width: 700px
+    }
+
+    .field-content h2 {
+      color: #ffe48a
+    }
+
+    .ground {
+      position: absolute;
+      bottom: -5%;
+      left: -5%;
+      width: 110%;
+      height: 42%;
+      background: linear-gradient(#24351c, #172014);
+      border-radius: 50% 50% 0 0
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 5%;
+      width: 2px;
+      height: 140px;
+      background: #61774b;
+      transform-origin: bottom;
+      animation: sway 3s ease-in-out infinite
+    }
+
+    .head {
+      position: absolute;
+      top: -25px;
+      left: -20px;
+      font-size: 42px
+    }
+
+    @keyframes sway {
+      50% {
+        transform: rotate(5deg)
+      }
+    }
+
+    #moments {
+      background: #fffdf5;
+      text-align: center
+    }
+
+    .moment-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1100px;
+      gap: 18px;
+      margin-top: 45px
+    }
+
+    .moment {
+      padding: 30px 18px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 10px 30px #715b2a16
+    }
+
+    .icon {
+      font-size: 42px
+    }
+
+    .moment h3 {
+      font-size: 2rem;
+      margin: 10px
+    }
+
+    #music {
+      background: #e8d58d
+    }
+
+    .musicbox {
+      background: #fffdf5;
+      padding: 50px;
+      max-width: 650px;
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: 0 25px 80px #59461d25
+    }
+
+    #secret {
+      background: #282115;
+      color: white;
+      text-align: center
+    }
+
+    .secretbox {
+      max-width: 650px
+    }
+
+    .secretbox h2 {
+      color: #ffe48a
+    }
+
+    .reveal {
+      display: none;
+      font-family: "Cormorant Garamond";
+      font-size: 1.8rem;
+      margin-top: 35px
+    }
+
+    #final {
+      background: radial-gradient(circle, #fff8d8, #efc949);
+      text-align: center
+    }
+
+    .final p {
+      font-family: "Cormorant Garamond";
+      font-size: 1.6rem
+    }
+
+    .reveal-on {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 1s
+    }
+
+    .reveal-on.visible {
+      opacity: 1;
+      transform: none
+    }
+
+    @media(max-width:800px) {
+
+      .gallery,
+      .moment-grid {
+        grid-template-columns: 1fr
+      }
+
+      .paper {
+        padding: 40px 25px
+      }
+
+      .sun {
+        right: -80px
+      }
+
+      .polaroid:nth-child(n) {
+        transform: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="hero">
+    <div class="sun"></div>
+    <div id="petals"></div>
+    <div class="hero-content reveal-on">
+      <div class="eyebrow">21 de septiembre · para ti</div>
+      <h1>Para ti,<br><span class="gold">mi amor.</span></h1>
+      <p class="hero-sub">No pude estar ahí para darte flores, así que hice un pequeño lugar donde pudiera dejártelas.
+      </p>
+      <button onclick="go('letter')">Abrir mi regalo 🌼</button>
+      <div class="scroll">↓ DESLIZA ↓</div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="paper reveal-on">
+      <div class="eyebrow">Una carta para ti</div>
+      <h2>Mi niña 💌</h2>
+      <p>Hoy me hubiera encantado poder estar contigo, mirarte a los ojos y darte flores amarillas en persona.</p>
+      <p>Pero aunque ahora hayan miles de kilómetros entre nosotros, no quería dejar que este día pase como si fuera uno
+        cualquiera.
+      </p>
+      <p>Así que hice esto para ti. No es una flor que puedas poner en un florero, pero sí es algo que hice yo, pensando
+        en ti, en nosotros y en todas las ganas que tengo de tenerte cerquita.</p>
+      <p>Quiero que recuerdes que estar lejos no significa estar ausente. Sigues apareciendo en mis pensamientos, en mis
+        días y en esas pequeñas cosas que de repente me hacen pensar en ti.</p>
+      <p>Ojalá pronto pueda cambiar esta pantalla por un abrazo de verdad.</p>
+      <p>Feliz 21, mi amor. 🌼</p>
+      <p class="sign">Con muchísimo amor,<br><b>Robotito 🤖💛</b></p>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap reveal-on">
+      <div class="eyebrow">Un poquito de nosotros</div>
+      <h2>Nuestros momentos 📸</h2>
+      <div class="gallery">
+        <div class="polaroid"><img src="foto1.jpg">
+          <div>“Un recuerdo que siempre me hace sonreír.”</div>
+        </div>
+        <div class="polaroid"><img src="foto2.jpg">
+          <div>“Aquí estabas demasiado bonita y lo sabes.”</div>
+        </div>
+        <div class="polaroid"><img src="foto3.jpg">
+          <div>“Uno de mis "futuros" momentos favoritos contigo😂.”</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="field">
+    <div class="ground"></div>
+    <div id="stems"></div>
+    <div class="field-content reveal-on">
+      <div class="eyebrow">Las flores que no pude darte</div>
+      <h2>Dicen que las flores amarillas representan alegría, cariño y nuevos comienzos.</h2>
+      <p>Yo solamente sé que cuando pensé en qué regalarte hoy...</p>
+      <h2>pensé en ti. 🌻</h2>
+    </div>
+  </section>
+
+  <section id="moments">
+    <div class="reveal-on">
+      <div class="eyebrow">Si estuvieras aquí</div>
+      <h2>¿Qué haríamos?</h2>
+      <div class="moment-grid">
+        <div class="moment">
+          <div class="icon">💏</div>
+          <h3>Abrazarte</h3>
+          <p>Y probablemente no soltarte por un buen rato.</p>
+        </div>
+        <div class="moment">
+          <div class="icon">🍿</div>
+          <h3>Película</h3>
+          <p>Aunque seguramente terminaríamos hablando.</p>
+        </div>
+        <div class="moment">
+          <div class="icon">🍔</div>
+          <h3>Comer</h3>
+          <p>Porque obviamente esto no podía faltar.</p>
+        </div>
+        <div class="moment">
+          <div class="icon">😴</div>
+          <h3>Quedarnos</h3>
+          <p>Sin hacer nada, pero juntos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="musicbox reveal-on">
+      <h2>🎵 Una canción para ti</h2>
+      <audio controls style="width:100%;margin-top:20px">
+        <source src="cancion.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </section>
+
+  <section id="secret">
+    <div class="secretbox reveal-on">
+      <div class="eyebrow">Psst...</div>
+      <h2>¿Pensaste que ya había terminado?</h2>
+      <button onclick="secret()">Encontrar la última sorpresa 🔐</button>
+      <div id="secretText" class="reveal">
+        <p>Si llegaste hasta aquí...</p>
+        <p><b>Te AMO muchísimo.</b> 💛</p>
+        <p>Y espero poder darte estas flores de verdad muy pronto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="final">
+    <div class="reveal-on">
+      <div class="eyebrow">21 · 09</div>
+      <h1>Feliz 21,<br>mi amor. 🌼</h1>
+      <p>Ojalá pudiera estar ahí para darte estas flores en persona.</p>
+      <p>Mientras tanto, te mando todas estas.</p>
+      <h2>Te AMO. 💛</h2>
+    </div>
+  </section>
+
+  <script>
+    function go(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }) }
+    function secret() { document.getElementById('secretText').style.display = 'block' }
+    const petals = document.getElementById('petals');
+    for (let i = 0; i < 24; i++) { let p = document.createElement('span'); p.className = 'petal'; p.textContent = i % 2 ? '🌼' : '·'; p.style.left = Math.random() * 100 + '%'; p.style.animationDuration = (7 + Math.random() * 8) + 's'; p.style.animationDelay = (-Math.random() * 12) + 's'; petals.appendChild(p) }
+    const stems = document.getElementById('stems');
+    for (let i = 0; i < 24; i++) { let s = document.createElement('div'); s.className = 'stem'; s.style.left = Math.random() * 100 + '%'; s.style.height = (70 + Math.random() * 130) + 'px'; s.style.animationDelay = Math.random() * 2 + 's'; s.innerHTML = '<span class="head">' + (i % 3 ? '🌼' : '🌻') + '</span>'; stems.appendChild(s) }
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }), { threshold: .12 });
+    document.querySelectorAll('.reveal-on').forEach(e => io.observe(e));
+  </script>
+</body>
+
+</html>
